@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yên Mỹ II Housing Hub | Nhà ở xã hội & Shophouse KCN Hưng Yên</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#08131d;--bg-soft:#0e1d2c;--panel:#10263b;--card:#ffffff;
+      --text:#eff6ff;--muted:#b8c7da;--line:rgba(255,255,255,.12);
+      --brand:#13b981;--brand-2:#22c55e;--accent:#f59e0b;
+      --shadow:0 20px 60px rgba(0,0,0,.22);--radius:22px;--max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,sans-serif;color:#102132;background:linear-gradient(180deg,#f5fbff 0%,#eef5fb 100%);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .hero{position:relative;color:var(--text);overflow:hidden;background:linear-gradient(135deg,rgba(4,15,26,.84),rgba(9,28,42,.66)),url('https://sspark.genspark.ai/cfimages?u1=cnCmkih69aylB1XGDErBygLe0ZFZozHKG%2Fh5Pf32QeykRzEaQp3f4UUWllEgLJHIyAyHobzhXHfrv3qcLIuTpxOKBSqFeiRyCtarLm0ymxc06A%3D%3D&u2=cy%2FGkHSgCXSGSZTG&width=1024') center/cover no-repeat}
+    .hero::before{content:"";position:absolute;inset:auto -10% -20% auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(19,185,129,.35),transparent 65%);filter:blur(18px)}
+    .nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);background:rgba(8,19,29,.58);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.2px}
+    .brand-badge{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;color:#042014;font-weight:900;box-shadow:0 10px 28px rgba(34,197,94,.28)}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .nav-cta{padding:12px 18px;border-radius:999px;background:#fff;color:#082030;font-weight:700;box-shadow:var(--shadow)}
+    .hero-wrap{min-height:calc(100vh - 72px);display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;padding:72px 0 86px}
+    .tag{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);color:#dcfce7;font-weight:600;font-size:13px}
+    h1{margin:18px 0 18px;font-size:clamp(34px,5vw,64px);line-height:1.05;letter-spacing:-.03em}
+    .hero p.lead{font-size:18px;color:#d7e5f4;max-width:760px;margin:0 0 26px}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 26px}
+    .btn{padding:15px 22px;border-radius:16px;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:.25s ease;border:1px solid transparent}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#042014;box-shadow:0 18px 40px rgba(34,197,94,.28)}
+    .btn.secondary{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+    .btn:hover{transform:translateY(-2px)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+    .stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px;backdrop-filter:blur(6px)}
+    .stat strong{display:block;font-size:30px;line-height:1;margin-bottom:8px}
+    .stat span{font-size:13px;color:#d6e4f1}
+    .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:18px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+    .hero-card .cover{border-radius:22px;overflow:hidden;aspect-ratio:4/3}
+    .hero-card .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    .hero-card .mini-grid img{border-radius:18px;aspect-ratio:1.2/1;object-fit:cover}
+    section{padding:82px 0}
+    .section-head{margin-bottom:36px}
+    .eyebrow{color:#10b981;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;margin-bottom:8px}
+    h2{margin:0 0 12px;font-size:clamp(28px,4vw,44px);line-height:1.1;color:#082030}
+    .section-head > p{max-width:700px;margin:0;color:#5a7088}
+    .grid-2{display:grid;grid-template-columns:1.02fr .98fr;gap:24px}
+    .card{background:var(--card);border-radius:var(--radius);padding:28px;border:1px solid #e7eef5;box-shadow:0 14px 38px rgba(13,37,62,.08)}
+    .highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .item{background:linear-gradient(180deg,#f8fcff,#f3f8fd);border:1px solid #e6eef7;border-radius:20px;padding:20px}
+    .item h3{margin:0 0 8px;color:#09253a;font-size:18px}
+    .item p{margin:0;color:#60758b;font-size:14px}
+    .feature-list{display:grid;gap:14px;margin-top:8px}
+    .feature{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px dashed #d6e4ef}
+    .feature:last-child{border-bottom:none;padding-bottom:0}
+    .dot{min-width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#dcfce7;color:#0c6b43;font-weight:800}
+    .feature h4{margin:0 0 4px;font-size:17px;color:#0d2437}
+    .feature p{margin:0;color:#61758a;font-size:14px}
+    .location-box{background:linear-gradient(135deg,#0f2234,#14324b);color:#e8f0f8;border-radius:26px;padding:28px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .location-box::after{content:"";position:absolute;right:-80px;bottom:-90px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.35),transparent 62%)}
+    .distances{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+    .distance{padding:16px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08)}
+    .distance strong{display:block;font-size:26px}
+    .distance span{font-size:14px;color:#d7e5f3}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product-card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #e8eef5;box-shadow:0 12px 30px rgba(11,31,51,.06)}
+    .product-card-head{padding:24px 24px 16px}
+    .product-card .pill{display:inline-block;padding:7px 12px;border-radius:999px;background:#ecfdf5;color:#047857;font-size:12px;font-weight:700;margin-bottom:16px}
+    .product-card h3{margin:0 0 8px;font-size:22px;color:#082030}
+    .product-card .price-badge{display:inline-block;background:#082030;color:#86efac;font-weight:800;font-size:15px;padding:8px 14px;border-radius:12px;margin-bottom:12px}
+    .product-card ul{margin:0;padding-left:18px;color:#61758a}
+    .product-card li+li{margin-top:8px}
+    /* Accordion */
+    .accordion{border-top:1px solid #e8eef5}
+    .acc-item{border-bottom:1px solid #e8eef5}
+    .acc-trigger{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;font:inherit;font-weight:700;font-size:15px;color:#082030;text-align:left;transition:background .2s}
+    .acc-trigger:hover{background:#f5faff}
+    .acc-trigger .icon{font-size:20px;transition:transform .3s;flex-shrink:0;color:#10b981}
+    .acc-trigger.open .icon{transform:rotate(45deg)}
+    .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .acc-body.open{max-height:600px}
+    .acc-content{padding:4px 24px 20px;color:#4a6278;font-size:14px;line-height:1.7}
+    .acc-content ul{margin:8px 0 0;padding-left:18px}
+    .acc-content li+li{margin-top:6px}
+    .acc-content strong{color:#082030}
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:14px}
+    .gallery .big,.gallery .small{position:relative;border-radius:22px;overflow:hidden;min-height:220px;box-shadow:0 14px 36px rgba(13,37,62,.12)}
+    .gallery img{width:100%;height:100%;object-fit:cover}
+    .caption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(8,19,29,.7);backdrop-filter:blur(8px);color:#fff;padding:12px 14px;border-radius:14px;font-size:13px}
+    /* Timeline */
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{background:#fff;border:1px solid #e8eef5;border-radius:22px;padding:22px;position:relative;box-shadow:0 12px 26px rgba(11,31,51,.05)}
+    .step .num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#082030;color:#fff;font-weight:800;margin-bottom:14px}
+    .step h3{margin:0 0 8px;font-size:18px;color:#082030}
+    .step p{margin:0;color:#61758a;font-size:14px}
+    /* CTA Section */
+    .cta-section{background:linear-gradient(135deg,#082030,#10304a);color:#eef6ff;border-radius:32px;padding:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;box-shadow:var(--shadow)}
+    .cta-section h2{color:#fff}
+    .cta-points{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .cta-point{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:14px 16px;border-radius:18px;color:#dbe8f5;font-size:14px}
+    .cta-point strong{display:block;color:#86efac;margin-bottom:4px}
+    /* Form */
+    .form-card{background:#fff;border-radius:24px;padding:24px;color:#0d2437}
+    .lead-form{display:grid;gap:14px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-group{display:grid;gap:8px}
+    .form-label{font-size:14px;font-weight:700;color:#15324b}
+    .form-control{width:100%;padding:14px 16px;border-radius:14px;border:1px solid #dce6f0;background:#f8fbfe;color:#0d2437;font:inherit;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+    .form-control::placeholder{color:#7a8ea2}
+    .form-control:focus{border-color:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.14);background:#fff}
+    textarea.form-control{min-height:90px;resize:vertical}
+    .form-submit{appearance:none;border:none;cursor:pointer;padding:16px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#042014;font-weight:800;font:inherit;box-shadow:0 16px 30px rgba(34,197,94,.24);transition:transform .2s,opacity .2s;font-size:16px}
+    .form-submit:hover{transform:translateY(-1px)}
+    .form-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+    .form-status{display:none;padding:12px 14px;border-radius:14px;font-size:14px;font-weight:600;margin-top:4px}
+    .form-status.is-visible{display:block}
+    .form-status.success{background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
+    .form-status.error{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
+    /* Footer */
+    footer{padding:30px 0 46px;color:#688096}
+    .footer-box{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid #dfe8f1;padding-top:20px;align-items:center}
+    .footer-brand{font-weight:800;color:#082030;font-size:18px}
+    .footer-links{display:flex;gap:18px;font-size:14px}
+    .footer-links a{color:#688096}
+    .footer-links a:hover{color:#10b981}
+    .floating-cta{position:fixed;right:18px;bottom:18px;z-index:60;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#042014;font-weight:800;padding:14px 22px;border-radius:999px;box-shadow:0 18px 42px rgba(16,185,129,.3);font-family:inherit}
+    @media(max-width:1080px){.hero-wrap,.grid-2,.cta-section{grid-template-columns:1fr}.stats,.products,.timeline{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:1fr 1fr}.gallery .big{grid-column:1/-1;min-height:320px}}
+    @media(max-width:760px){.nav-links{display:none}.stats,.highlight-grid,.products,.timeline,.cta-points,.distances,.gallery,.form-grid{grid-template-columns:1fr}.hero-wrap{padding:40px 0 56px;min-height:auto}h1{font-size:36px}.hero p.lead{font-size:16px}section{padding:64px 0}.hero-card .mini-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="hero" id="top">
+    <div class="nav">
+      <div class="container nav-inner">
+        <div class="brand">
+          <div class="brand-badge">YM</div>
+          <div>
+            <div>KCN Yên Mỹ II</div>
+            <div style="font-size:12px;color:#c5d4e5;font-weight:500">Nhà ở xã hội &amp; Shophouse thương mại</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#tong-quan">Tổng quan</a>
+          <a href="#vi-tri">Vị trí</a>
+          <a href="#san-pham">Sản phẩm</a>
+          <a href="#tien-ich">Tiện ích</a>
+          <a href="#phap-ly">Pháp lý</a>
+          <a href="#lien-he">Đăng ký</a>
+        </div>
+        <a class="nav-cta" href="#lien-he">Nhận tư vấn</a>
+      </div>
+    </div>
+
+    <div class="container hero-wrap">
+      <div>
+        <div class="tag">🏗 Dự án quy mô lớn tại Hưng Yên · Khởi công 19/08/2025</div>
+        <h1>An cư bền vững tại trung tâm kết nối công nghiệp <span style="color:#86efac">Yên Mỹ II</span></h1>
+        <p class="lead">Dự án nhà ở xã hội và Shophouse thương mại tọa lạc ngay trung tâm KCN Yên Mỹ II – Hưng Yên. Vị trí chiến lược, tiện ích đồng bộ, phù hợp ở thực, kinh doanh và đầu tư dài hạn.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#lien-he">📋 Đăng ký nhận bảng giá</a>
+          <a class="btn secondary" href="#thu-vien">🖼 Xem phối cảnh dự án</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>31ha</strong><span>Quỹ đất phát triển dự án</span></div>
+          <div class="stat"><strong>27</strong><span>Tòa chung cư cao tối đa 11 tầng</span></div>
+          <div class="stat"><strong>~9.000</strong><span>Căn hộ diện tích 36–70m²</span></div>
+          <div class="stat"><strong>06/2027</strong><span>Dự kiến bàn giao tòa đầu tiên</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="cover">
+          <img src="https://sspark.genspark.ai/cfimages?u1=IFxpskN89Z2J3gGSxFDE6UVXuskpah9i9o23hm2dggnw8ww8VB9c1tK3X8qek0HPrEAzBnTNZz2t7HkSbX7HdWPbgXki2DH2now6oZsBQrzmYQ%3D%3D&u2=l6FiDSGIeNs56VRh&width=1024" alt="Phối cảnh dự án Yên Mỹ II">
+        </div>
+        <div class="mini-grid">
+          <img src="https://sspark.genspark.ai/cfimages?u1=cnCmkih69aylB1XGDErBygLe0ZFZozHKG%2Fh5Pf32QeykRzEaQp3f4UUWllEgLJHIyAyHobzhXHfrv3qcLIuTpxOKBSqFeiRyCtarLm0ymxc06A%3D%3D&u2=cy%2FGkHSgCXSGSZTG&width=1024" alt="Nhìn từ trên cao">
+          <img src="https://sspark.genspark.ai/cfimages?u1=eGrHzgzbE9A5RrbSg9IPRbSHiYj3phK4TdvnyjTcfe83tTqjXi%2F1BpTSAaxfmmPZ6d43i1NelbE9HQmX4HzvB9b4mIr%2BQknMBEqQdr%2BSTQ%3D%3D&u2=e%2FA2elxJWZnCPyat&width=1024" alt="Lễ khởi công">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TỔNG QUAN -->
+  <section id="tong-quan">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Tổng quan dự án</div>
+        <h2>Dự án nhà ở xã hội quy mô gần 5.000 tỷ đồng – Cơ hội an cư và đầu tư bền vững</h2>
+        <p>Phục vụ lực lượng lao động trẻ, gia đình trẻ, nhân sự kỹ thuật KCN và nhà đầu tư tìm kiếm dòng tiền từ cho thuê.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="highlight-grid">
+            <div class="item">
+              <h3>Quy mô phát triển lớn</h3>
+              <p>27 tòa chung cư, ~9.000 căn hộ và 250 căn Shophouse trên quỹ đất 31ha.</p>
+            </div>
+            <div class="item">
+              <h3>Thiết kế phù hợp ở thực</h3>
+              <p>Căn hộ diện tích 36–70m², bố trí 1 đến 3 phòng ngủ, tối ưu công năng sử dụng.</p>
+            </div>
+            <div class="item">
+              <h3>Tiện ích đồng bộ</h3>
+              <p>Công viên 1,9ha, trường học, y tế, thương mại dịch vụ và khu vui chơi nội khu.</p>
+            </div>
+            <div class="item">
+              <h3>Tiến độ minh bạch</h3>
+              <p>Khởi công 19/08/2025. Những tòa đầu tiên dự kiến bàn giao tháng 06/2027.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature-list">
+            <div class="feature">
+              <div class="dot">01</div>
+              <div>
+                <h4>Thông điệp cốt lõi</h4>
+                <p>"An cư gần nơi làm việc – kết nối nhanh – sống đầy đủ tiện ích – đầu tư dài hạn vào chất lượng cuộc sống".</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="dot">02</div>
+              <div>
+                <h4>Đối tượng phù hợp</h4>
+                <p>Công nhân kỹ thuật, nhân sự văn phòng KCN, gia đình trẻ mua ở thực, nhà đầu tư tài chính vừa phải tìm kiếm dòng tiền từ cho thuê.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="dot">03</div>
+              <div>
+                <h4>Lợi thế cạnh tranh</h4>
+                <p>Nhu cầu nhà ở thực lớn từ hàng chục nghìn công nhân KCN Yên Mỹ II và các KCN lân cận, tạo nền tảng vững chắc cho giá trị dài hạn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VỊ TRÍ -->
+  <section id="vi-tri">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Vị trí &amp; kết nối</div>
+        <h2>Tâm điểm giao thông của khu vực công nghiệp Hưng Yên</h2>
+        <p>Dự án nằm tại xã Yên Mỹ, tiếp giáp KCN Yên Mỹ II, liền kề Quốc lộ 39A và ĐT.200, tối ưu thời gian di chuyển và kết nối vùng.</p>
+      </div>
+      <div class="grid-2">
+        <div class="location-box">
+          <h3 style="margin:0 0 10px;font-size:28px">Kết nối chiến lược</h3>
+          <p style="margin:0;color:#d9e7f5">Liền kề trục giao thông huyết mạch, thuận tiện tới Hà Nội, cao tốc Hà Nội – Hải Phòng, các trung tâm kinh tế Bắc Bộ và cảng biển Hải Phòng.</p>
+          <div class="distances">
+            <div class="distance"><strong>4 km</strong><span>Đến nút giao cao tốc Hà Nội – Hải Phòng</span></div>
+            <div class="distance"><strong>6 km</strong><span>Đến Quốc lộ 5A</span></div>
+            <div class="distance"><strong>30 km</strong><span>Đến trung tâm Hà Nội</span></div>
+            <div class="distance"><strong>25 km</strong><span>Đến sân bay quốc tế Gia Bình</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="feature-list">
+            <div class="feature">
+              <div class="dot">A</div>
+              <div>
+                <h4>Ở gần nơi làm việc</h4>
+                <p>Phù hợp chiến lược sống gần khu công nghiệp, giảm áp lực đi lại và tối ưu thời gian cho người lao động.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="dot">B</div>
+              <div>
+                <h4>Kết nối vùng thuận tiện</h4>
+                <p>Dễ tiếp cận các đầu mối hạ tầng quan trọng, tạo lợi thế sinh sống và phát triển dịch vụ thương mại.</p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="dot">C</div>
+              <div>
+                <h4>Tiềm năng tăng giá dài hạn</h4>
+                <p>Hạ tầng giao thông đồng bộ và nhu cầu nhà ở thực lớn là nền tảng để dự án gia tăng giá trị bền vững.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SẢN PHẨM -->
+  <section id="san-pham">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Sản phẩm</div>
+        <h2>Cơ cấu sản phẩm đa dạng – Phù hợp ở thực, kinh doanh và đầu tư</h2>
+        <p>Click vào từng loại sản phẩm để xem chi tiết diện tích, mức giá và chính sách ưu đãi.</p>
+      </div>
+      <div class="products">
+        <!-- SP 1 -->
+        <div class="product-card">
+          <div class="product-card-head">
+            <div class="pill">Căn hộ nhà ở xã hội</div>
+            <h3>1 Phòng ngủ</h3>
+            <div class="price-badge">(chưa có thông tin) </div>
+          </div>
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Thông tin chi tiết</span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li><strong>Diện tích:</strong> 36 – 45m²</li>
+                    <li><strong>Bố cục:</strong> 1PN + 1WC, bếp liền phòng khách</li>
+                    <li><strong>Phù hợp:</strong> Người độc thân, cặp vợ chồng mới</li>
+                    <li><strong>Tầng:</strong> Từ tầng 2 đến tầng 11</li>
+                    <li><strong>Hướng:</strong> Đông Nam, Tây Nam</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Chính sách ưu đãi</span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li>Vay ngân hàng hỗ trợ lãi suất ưu đãi</li>
+                    <li>Hỗ trợ thủ tục pháp lý, công chứng</li>
+                    <li>Chiết khấu thanh toán nhanh lên đến 3%</li>
+                    <li>Ưu tiên đối tượng công nhân KCN Yên Mỹ II</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SP 2 -->
+        <div class="product-card">
+          <div class="product-card-head">
+            <div class="pill">Căn hộ nhà ở xã hội</div>
+            <h3>2–3 Phòng ngủ</h3>
+            <div class="price-badge">(chưa có thông tin)</div>
+          </div>
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Thông tin chi tiết</span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li><strong>Diện tích:</strong> 50 – 70m²</li>
+                    <li><strong>Bố cục:</strong> 2–3PN, 1–2WC, ban công thoáng</li>
+                    <li><strong>Phù hợp:</strong> Gia đình có con nhỏ, nhiều thế hệ</li>
+                    <li><strong>Tầng:</strong> Từ tầng 2 đến tầng 11</li>
+                    <li><strong>Nội thất:</strong> Bàn giao thô, tự hoàn thiện</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Chính sách ưu đãi (chưa chính thức) </span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li>Hỗ trợ vay ngân h </li>
+                    <li>Thanh toán đợt đầu chỉ từ 20%</li>
+                    <li>Chiết khấu 2–5% tùy thời điểm mở bán</li>
+                    <li>Miễn phí quản lý 12 tháng đầu</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SP 3 -->
+        <div class="product-card">
+          <div class="product-card-head">
+            <div class="pill">Nhà liền kề thương mại</div>
+            <h3>Shophouse thấp tầng</h3>
+            <div class="price-badge">Liên hệ báo giá</div>
+          </div>
+          <div class="accordion">
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Thông tin chi tiết</span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li><strong>Số lượng:</strong> 250 căn</li>
+                    <li><strong>Tầng cao:</strong> Tối đa 5 tầng</li>
+                    <li><strong>Diện tích đất:</strong> 60 – 120m²</li>
+                    <li><strong>Mặt tiền:</strong> Hướng trục đường nội khu chính</li>
+                    <li><strong>Phù hợp:</strong> Kinh doanh dịch vụ, F&B, văn phòng</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-trigger" onclick="toggleAcc(this)">
+                <span>Tiềm năng đầu tư</span><span class="icon">+</span>
+              </button>
+              <div class="acc-body">
+                <div class="acc-content">
+                  <ul>
+                    <li>Phục vụ ~9.000 hộ cư dân nội khu +  chuyên gia Kỹ Sư và công nhân KCN</li>
+                    <li>Dòng tiền cho thuê ổn định từ năm đầu bàn giao</li>
+                    <li>Tăng giá dài hạn cùng sự phát triển của KCN Yên Mỹ II</li>
+                    <li>Sổ đỏ lâu dài, thừa kế và chuyển nhượng tự do</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIỆN ÍCH -->
+  <section id="tien-ich">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Tiện ích nội khu</div>
+        <h2>Không chỉ là nơi ở – Môi trường sống hoàn chỉnh lần đầu tiên được triển khai tại Yên Mỹ</h2>
+        <p>Hệ thống tiện ích và hạ tầng xã hội được quy hoạch bài bản, tạo giá trị sống bền vững cho cư dân.</p>
+      </div>
+      <div class="highlight-grid">
+        <div class="item"><h3>🌳 1,9ha công viên trung tâm</h3><p>Đường chạy bộ, quảng trường, BBQ ngoài trời, hồ nước, sân chơi trẻ em và không gian thư giãn xanh.</p></div>
+        <div class="item"><h3>🏛 Nhà văn hóa &gt; 2.000m²</h3><p>Tăng kết nối cộng đồng, tổ chức hoạt động sinh hoạt tập thể và văn hóa thể thao cho cư dân.</p></div>
+        <div class="item"><h3>🏥 Dịch vụ y tế ~6.000m²</h3><p>Phòng khám đa khoa, hỗ trợ chăm sóc sức khỏe thường nhật, nâng cao sự an tâm khi sinh sống.</p></div>
+        <div class="item"><h3>🏫 Trường học 11.200m²</h3><p>Trường mầm non và tiểu học trong khu, thuận tiện cho gia đình trẻ không mất thời gian đưa đón xa.</p></div>
+        <div class="item"><h3>🛒 Thương mại dịch vụ &gt; 4.500m²</h3><p>Hệ sinh thái mua sắm, ăn uống và dịch vụ thiết yếu ngay trong bán kính đi bộ.</p></div>
+        <div class="item"><h3>🏃 Không gian cộng đồng từng cụm</h3><p>Thư viện mini, sân cầu lông, đường dạo bộ và khu sinh hoạt cư dân ngay dưới chân mỗi tòa nhà.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHÁP LÝ -->
+  <section id="phap-ly">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Pháp lý &amp; tiến độ</div>
+        <h2>Minh bạch pháp lý – Vững chắc niềm tin</h2>
+        <p>Toàn bộ thông tin pháp lý và tiến độ được cập nhật theo công bố chính thức của chủ đầu tư.</p>
+      </div>
+      <div class="card" style="max-width:860px;margin:0 auto">
+        <div class="accordion">
+          <div class="acc-item">
+            <button class="acc-trigger" onclick="toggleAcc(this)">
+              <span>📄 Quyết định phê duyệt &amp; quy hoạch</span><span class="icon">+</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-content">
+                <ul>
+                  <li>Dự án đã được UBND tỉnh Hưng Yên phê duyệt quy hoạch tổng thể 31ha</li>
+                  <li>Phù hợp quy hoạch phát triển nhà ở xã hội KCN theo Nghị định 100/2015/NĐ-CP</li>
+                  <li>Chủ đầu tư: Tập đoàn Hòa Phát (đơn vị uy tín hàng đầu Việt Nam)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" onclick="toggleAcc(this)">
+              <span>🏗 Tiến độ xây dựng</span><span class="icon">+</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-content">
+                <ul>
+                  <li><strong>19/08/2025:</strong> Lễ khởi công chính thức toàn dự án</li>
+                  <li><strong>Q1/2026:</strong> Hoàn thiện móng cọc và tầng hầm các tòa đầu tiên</li>
+                  <li><strong>Q4/2026:</strong> Cất nóc các tòa nhà giai đoạn 1</li>
+                  <li><strong>06/2027:</strong> Dự kiến bàn giao những tòa đầu tiên</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" onclick="toggleAcc(this)">
+              <span>📋 Điều kiện mua nhà ở xã hội</span><span class="icon">+</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-content">
+                <ul>
+                  <li>Chưa có nhà ở hoặc chỉ có nhà ở diện tích dưới 10m²/người</li>
+                  <li>Thu nhập thuộc diện không phải nộp thuế TNCN (dưới ~11 triệu/tháng)</li>
+                  <li>Có đăng ký hộ khẩu thường trú hoặc tạm trú tại Hưng Yên</li>
+                  <li>Ưu tiên công nhân đang làm việc tại các KCN tỉnh Hưng Yên</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" onclick="toggleAcc(this)">
+              <span>🏦 Chính sách vay &amp; thanh toán (chưa chính thức)</span><span class="icon">+</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-content">
+                <ul>
+                  <li>Vay gói lãi suất ưu đãi từ ngân hàng </li>
+                  <li>Đặt cọc: 50 – 100 triệu để giữ chỗ ưu tiên</li>
+                  <li>Thanh toán đợt 1: Từ 20% giá trị căn hộ khi ký hợp đồng</li>
+                  <li>Thanh toán theo tiến độ xây dựng, linh hoạt 10–20%/đợt</li>
+                  <li>Vay ngân hàng tối đa 70% giá trị, thời hạn đến 25 năm</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THƯ VIỆN ẢNH -->
+  <section id="thu-vien">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Thư viện hình ảnh</div>
+        <h2>Phối cảnh &amp; hình ảnh khởi công dự án</h2>
+      </div>
+      <div class="gallery">
+        <div class="big">
+          <img src="https://sspark.genspark.ai/cfimages?u1=IFxpskN89Z2J3gGSxFDE6UVXuskpah9i9o23hm2dggnw8ww8VB9c1tK3X8qek0HPrEAzBnTNZz2t7HkSbX7HdWPbgXki2DH2now6oZsBQrzmYQ%3D%3D&u2=l6FiDSGIeNs56VRh&width=1024" alt="Phối cảnh dự án">
+          <div class="caption">Phối cảnh tổng thể dự án Yên Mỹ II Housing Hub</div>
+        </div>
+        <div class="small">
+          <img src="https://sspark.genspark.ai/cfimages?u1=cnCmkih69aylB1XGDErBygLe0ZFZozHKG%2Fh5Pf32QeykRzEaQp3f4UUWllEgLJHIyAyHobzhXHfrv3qcLIuTpxOKBSqFeiRyCtarLm0ymxc06A%3D%3D&u2=cy%2FGkHSgCXSGSZTG&width=1024" alt="Nhìn từ trên cao">
+          <div class="caption">Nhìn từ trên cao – Quy mô 31ha</div>
+        </div>
+        <div class="small">
+          <img src="https://sspark.genspark.ai/cfimages?u1=eGrHzgzbE9A5RrbSg9IPRbSHiYj3phK4TdvnyjTcfe83tTqjXi%2F1BpTSAaxfmmPZ6d43i1NelbE9HQmX4HzvB9b4mIr%2BQknMBEqQdr%2BSTQ%3D%3D&u2=e%2FA2elxJWZnCPyat&width=1024" alt="Lễ khởi công">
+          <div class="caption">Lễ khởi công ngày 19/08/2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIẾN ĐỘ BÁN HÀNG -->
+  <section id="tien-do">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Hành trình khách hàng</div>
+        <h2>4 bước để sở hữu căn hộ Yên Mỹ II</h2>
+      </div>
+      <div class="timeline">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Đăng ký tư vấn</h3>
+          <p>Điền form hoặc liên hệ trực tiếp qua hotline/Zalo để nhận bảng giá, chính sách và mặt bằng mới nhất.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Tham quan thực tế</h3>
+          <p>Được đưa đón tham quan công trình, xem mô hình tổng thể và tư vấn chọn căn phù hợp nhu cầu.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Đặt cọc giữ chỗ</h3>
+          <p>Đặt cọc từ 50 triệu để ưu tiên chọn tầng, hướng và vị trí căn ưng ý trước khi mở bán chính thức.</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Ký hợp đồng &amp; nhận nhà</h3>
+          <p>Ký HĐMB, thanh toán theo tiến độ và nhận bàn giao căn hộ dự kiến từ tháng 06/2027.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="lien-he">
+    <div class="container">
+      <div class="cta-section">
+        <div>
+          <div class="eyebrow" style="color:#86efac">Đăng ký ngay hôm nay</div>
+          <h2>Nhận bảng giá, mặt bằng &amp; chính sách ưu đãi mới nhất</h2>
+          <div class="cta-points">
+            <div class="cta-point"><strong>📋 Bảng giá chi tiết</strong>Cập nhật theo từng đợt mở bán, ưu tiên khách đăng ký sớm</div>
+            <div class="cta-point"><strong>🏠 Mặt bằng căn hộ</strong>Đầy đủ layout Shophouse theo tầng</div>
+            <div class="cta-point"><strong>🏦 Tư vấn tài chính</strong>Hỗ trợ thủ tục vay, tính toán khả năng tài chính cụ thể</div>
+            <div class="cta-point"><strong>📞 Tư vấn 1:1</strong>Chuyên viên tư vấn riêng, không mất phí, không áp lực</div>
+          </div>
+          <div style="margin-top:24px;display:flex;gap:16px;flex-wrap:wrap">
+            <a href="tel:0962299939" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:12px 20px;border-radius:14px;font-weight:700">📞 0962.299.939</a>
+            <a href="https://zalo.me/0962299939" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#0068ff;color:#fff;padding:12px 20px;border-radius:14px;font-weight:700">💬 Zalo tư vấn ngay</a>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3 style="margin:0 0 4px;font-size:22px">Đăng ký nhận thông tin</h3>
+          <p style="margin:0 0 16px;color:#5f7388;font-size:14px">Điền form để nhận bảng giá &amp; được tư vấn miễn phí</p>
+          <form class="lead-form" id="leadForm">
+            <input type="hidden" name="project" value="Yên Mỹ II Housing Hub">
+            <input type="hidden" name="page_url" id="pageUrlField">
+            <input type="hidden" name="submitted_at" id="submittedAtField">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Họ và tên *</label>
+                <input class="form-control" id="fullName" name="full_name" type="text" placeholder="Nguyễn Văn A" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Số điện thoại *</label>
+                <input class="form-control" id="phone" name="phone" type="tel" placeholder="09xx xxx xxx" required>
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="interest">Nhu cầu quan tâm *</label>
+                <select class="form-control" id="interest" name="interest" required>
+                  <option value="">Chọn nhu cầu</option>
+                  <option>Căn hộ 1 phòng ngủ</option>
+                  <option>Căn hộ 2 phòng ngủ</option>
+                  <option>Căn hộ 3 phòng ngủ</option>
+                  <option>Shophouse thương mại</option>
+                  <option>Nhận bảng giá tổng hợp</option>
+                  <option>Tư vấn tổng quan dự án</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactTime">Khung giờ liên hệ</label>
+                <select class="form-control" id="contactTime" name="preferred_contact_time">
+                  <option value="">Chọn khung giờ</option>
+                  <option>Sáng (08:00 – 11:30)</option>
+                  <option>Chiều (13:30 – 17:30)</option>
+                  <option>Tối (18:00 – 21:00)</option>
+                  <option>Liên hệ bất kỳ lúc nào</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="note">Ghi chú thêm</label>
+              <textarea class="form-control" id="note" name="note" placeholder="VD: Tôi muốn nhận bảng giá căn 2PN, ngân sách khoảng 1,5 tỷ..."></textarea>
+            </div>
+            <button class="form-submit" type="submit" id="submitButton">🚀 Nhận thông tin ngay – Miễn phí</button>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-box">
+      <div>
+        <div class="footer-brand">Yên Mỹ II Housing Hub</div>
+        <span>Dự án nhà ở xã hội &amp; Shophouse thương mại – KCN Yên Mỹ II, Hưng Yên</span>
+        <p>Website mẫu chỉ mang tính chất tham khảo, mọi thông tin đến chi tiết dự án hãy liên hệ cho ban quản lý website để được hỗ trợ <p></p>
+      </div>
+      <div class="footer-links">
+        <a href="#tong-quan">Tổng quan</a>
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="#phap-ly">Pháp lý</a>
+        <a href="tel:0962299939">📞 0962.299.939</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="floating-cta" href="#lien-he">Nhận tư vấn ngay</a>
+
+  <script>
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyRRVQcSVWAr0gdEGPxR12Wq4rX0-ze4wYVMGS1QlWEN4kit80H-LsvQYNIQc42c3k/exec';
+    const leadForm = document.getElementById('leadForm');
+    const submitButton = document.getElementById('submitButton');
+    const formStatus = document.getElementById('formStatus');
+    const pageUrlField = document.getElementById('pageUrlField');
+    const submittedAtField = document.getElementById('submittedAtField');
+    if (pageUrlField) pageUrlField.value = window.location.href;
+
+    function showFormStatus(message, type) {
+      formStatus.textContent = message;
+      formStatus.className = 'form-status is-visible ' + type;
+    }
+
+    function toggleAcc(btn) {
+      const body = btn.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      // close all in same accordion
+      const parent = btn.closest('.accordion');
+      parent.querySelectorAll('.acc-body').forEach(b => b.classList.remove('open'));
+      parent.querySelectorAll('.acc-trigger').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        body.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+
+    leadForm?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submittedAtField.value = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+      submitButton.disabled = true;
+      submitButton.textContent = 'Đang gửi...';
+      showFormStatus('Hệ thống đang xử lý, vui lòng chờ...', 'success');
+      try {
+        const formData = new FormData(leadForm);
+        const params = new URLSearchParams();
+        formData.forEach((value, key) => { params.append(key, value); });
+        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' });
+        leadForm.reset();
+        if (pageUrlField) pageUrlField.value = window.location.href;
+        showFormStatus('✅ Đăng ký thành công! Đang chuyển sang Zalo để tư vấn...', 'success');
+        setTimeout(() => { window.open('https://zalo.me/0962299939', '_blank'); }, 1500);
+      } catch (error) {
+        showFormStatus('Có lỗi xảy ra. Vui lòng gọi trực tiếp 0962.299.939 để được hỗ trợ.', 'error');
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = '🚀 Nhận thông tin ngay – Miễn phí';
+      }
+    });
+  </script>
+</body>
+</html>
